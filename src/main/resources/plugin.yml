@@ -1,0 +1,8 @@
+name: EzMute
+version: '${project.version}'
+main: me.ezmute.ezmute.EzMute
+api-version: 1.18
+depend: []
+softdepend: []
+authors: [ hrdu_ ]
+description: Enables players to mute other players
