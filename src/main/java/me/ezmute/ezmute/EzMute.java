@@ -1,11 +1,8 @@
 package me.ezmute.ezmute;
 
-import org.bukkit.ChatColor;
-import org.bukkit.Color;
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.command.ConsoleCommandSender;
-import org.bukkit.entity.Player;
+import me.ezmute.ezmute.commands.commandMute;
+import me.ezmute.ezmute.events.onPlayerChat;
+import me.ezmute.ezmute.utils.Utils;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class EzMute extends JavaPlugin {
@@ -14,30 +11,12 @@ public final class EzMute extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
 
-        System.out.println(Color.GREEN + "EzMute By hrdu_");
+        Utils.log("&4Ez&3Mute");
+
+        this.getCommand("mute").setExecutor(new commandMute());
+
+        getServer().getPluginManager().registerEvents(new onPlayerChat(), this);
 
     }
 
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args){
-
-        // /-mute
-        if (command.getName().equalsIgnoreCase("mute")) {
-
-            if(sender instanceof Player p){
-
-                p.sendMessage(ChatColor.GREEN + "Player Muted!");
-
-
-            }else if (sender instanceof ConsoleCommandSender){
-
-                System.out.println("This command can not be run from console.");
-
-            }
-
-
-        }
-
-        return true;
-    }
 }
