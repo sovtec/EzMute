@@ -6,3 +6,7 @@ depend: []
 softdepend: []
 authors: [ hrdu_ ]
 description: Enables players to mute other players
+commands:
+  mute:
+    description: Mutes another player (that's the plan atleast)
+    usage: /<command> <player>
